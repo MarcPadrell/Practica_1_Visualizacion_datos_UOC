@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visualización de Calidad del Aire - UOC</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Cargar D3.js localmente -->
+    <script src="lib/d3.v7.min.js"></script>
+</head>
+<body>
+    <div class="page-container">
+        <!-- Panel lateral -->
+        <div class="sidebar">
+            <div class="logo-container">
+                <h2 class="uoc-title">UOC</h2>
+            </div>
+            <h3>Visualizaciones</h3>
+            <ul class="nav-menu">
+                <li class="active" data-viz="bar-chart">Muertes por contaminante</li>
+                <li data-viz="map-viz">Mapa de contaminación</li>
+                <li data-viz="scatter-viz">Correlación de datos</li>
+                <li data-viz="timeseries-viz">Series temporales</li>
+            </ul>
+            <div class="student-info">
+                <p>Estudiante:</p>
+                <p class="student-name">Marc Padrell Pujol</p>
+                <p class="course-info">Visualización de datos - UOC</p>
+            </div>
+        </div>
+
+        <!-- Contenido principal -->
+        <div class="main-content">
+            <div class="container">
+                <h1>Muertes atribuibles por contaminante en 2022</h1>
+                <label for="country-select">Filtrar por país:</label>
+                <select id="country-select" aria-label="Seleccionar país">
+                <option value="Global">Global</option>
+                </select>
+                <div id="bar-chart" class="viz-panel active"></div>
+                <div id="map-viz" class="viz-panel">Mapa en desarrollo</div>
+                <div id="scatter-viz" class="viz-panel">Gráfico de dispersión en desarrollo</div>
+                <div id="timeseries-viz" class="viz-panel">Series temporales en desarrollo</div>
+            </div>
+            <div id="error-message" class="hidden">Error al cargar los datos. Por favor, intenta de nuevo más tarde.</div>
+        </div>
+    </div>
+
+    <script src="scripts/main.js"></script>
+</body>
+</html>

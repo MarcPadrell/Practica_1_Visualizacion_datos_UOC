@@ -1,0 +1,17 @@
+[
+  {
+    "pollutant_id":"PM25",
+    "total_deaths":420751,
+    "pollutant_name":"PM2.5"
+  },
+  {
+    "pollutant_id":"NO2",
+    "total_deaths":110526,
+    "pollutant_name":"NO2"
+  },
+  {
+    "pollutant_id":"O3",
+    "total_deaths":80393,
+    "pollutant_name":"O3"
+  }
+]
