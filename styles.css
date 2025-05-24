@@ -149,10 +149,6 @@ h1 {
     transition: fill 0.3s;
 }
 
-.bar:hover {
-    fill: var(--uoc-primary);
-}
-
 .axis text {
     font-size: 12px;
     fill: var(--uoc-dark);
@@ -165,15 +161,37 @@ h1 {
 
 .tooltip {
     position: absolute;
-    background-color: var(--uoc-primary);
-    color: white;
-    padding: 8px 12px;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.95);
+    border: 1px solid #ddd;
     border-radius: 4px;
-    font-size: 14px;
     pointer-events: none;
-    opacity: 0;
-    transition: opacity 0.3s;
-    border: 1px solid var(--uoc-secondary);
+    font-size: 14px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.tooltip strong {
+    color: #333;
+    font-size: 16px;
+}
+
+.tooltip small {
+    color: #666;
+    font-style: italic;
+}
+
+.ranking-title {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.ranking-row {
+    font-size: 14px;
+}
+
+.axis-label {
+    font-size: 14px;
+    fill: #666;
 }
 
 #error-message {
@@ -243,4 +261,50 @@ h1 {
     outline: none;
     border-color: #0056b3;
     box-shadow: 0 0 0 2px rgba(0,86,179,0.2);
+}
+
+.fixed-ranking {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background-color: var(--uoc-white);
+    border: 1px solid var(--uoc-primary);
+    border-radius: 8px;
+    padding: 15px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    z-index: 1000;
+}
+
+.fixed-ranking h3 {
+    color: var(--uoc-primary);
+    margin: 0 0 10px 0;
+    font-size: 1.1em;
+    border-bottom: 2px solid var(--uoc-secondary);
+    padding-bottom: 5px;
+}
+
+.fixed-ranking-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.fixed-ranking-table td {
+    padding: 8px 0;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+
+.fixed-ranking-table tr:last-child td {
+    border-bottom: none;
+}
+
+.fixed-ranking-table .rank {
+    color: var(--uoc-accent);
+    font-weight: bold;
+    padding-right: 10px;
+}
+
+.fixed-ranking-table .deaths {
+    text-align: right;
+    color: var(--uoc-dark);
+    font-weight: 500;
 }
