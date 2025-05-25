@@ -19,7 +19,7 @@
             <ul class="nav-menu">
                 <li class="active" data-viz="bar-chart">Muertes por contaminante</li>
                 <li data-viz="map-viz">Mapa de contaminación</li>
-                <li data-viz="scatter-viz">Correlación de datos</li>
+                <li data-viz="scatter-viz">Evolución DALY por PM2.5</li>
                 <li data-viz="timeseries-viz">Series temporales</li>
             </ul>
             <div class="student-info">
@@ -35,7 +35,7 @@
                 <h1>Muertes atribuibles por contaminante en 2022</h1>
                 <label for="country-select">Filtrar por país:</label>
                 <select id="country-select" aria-label="Seleccionar país">
-                <option value="Global">Global</option>
+                <option value="Global">Global</option>  
                 </select>
                 <div id="bar-chart" class="viz-panel active"></div>
                 <div id="map-viz" class="viz-panel">Mapa en desarrollo</div>
@@ -47,5 +47,6 @@
     </div>
 
     <script src="scripts/main.js"></script>
+    <script src="scripts/scatter.js"></script>
 </body>
 </html>

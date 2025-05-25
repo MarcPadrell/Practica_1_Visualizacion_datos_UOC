@@ -146,7 +146,11 @@ h1 {
 
 .bar {
     fill: var(--uoc-accent);
-    transition: fill 0.3s;
+    transition: fill 0.2s;
+    -webkit-transition: fill 0.2s;
+    -moz-transition: fill 0.2s;
+    -ms-transition: fill 0.2s;
+    -o-transition: fill 0.2s;
 }
 
 .axis text {

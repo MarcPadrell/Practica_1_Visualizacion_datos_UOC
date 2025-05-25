@@ -145,6 +145,7 @@ function renderBarChart(data) {
 function setupNavigation() {
     const navItems = document.querySelectorAll('.nav-menu li');
     const vizPanels = document.querySelectorAll('.viz-panel');
+    const countrySelectContainer = document.querySelector('label[for="country-select"]').parentNode;
     
     navItems.forEach(item => {
         item.addEventListener('click', function() {
@@ -160,6 +161,16 @@ function setupNavigation() {
                     panel.classList.add('active');
                 }
             });
+            
+            // Mostrar u ocultar el selector de país según la visualización
+            // Solo mostrar el filtro en la pestaña de "Muertes por contaminante"
+            if (targetViz === 'bar-chart') {
+                document.getElementById('country-select').style.display = 'inline-block';
+                document.querySelector('label[for="country-select"]').style.display = 'inline-block';
+            } else {
+                document.getElementById('country-select').style.display = 'none';
+                document.querySelector('label[for="country-select"]').style.display = 'none';
+            }
             
             // Actualizar título según visualización
             const titles = {
