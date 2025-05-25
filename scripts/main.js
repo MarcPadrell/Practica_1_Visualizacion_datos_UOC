@@ -176,7 +176,7 @@ function setupNavigation() {
             const titles = {
                 'bar-chart': 'Muertes atribuibles por contaminante en 2022',
                 'map-viz': 'Mapa de contaminación por ciudades',
-                'scatter-viz': 'Correlación entre contaminantes y muertes',
+                'scatter-viz': 'Evolución Temporal de DALY por PM2.5 por País (2005-2022)',
                 'timeseries-viz': 'Evolución temporal de la contaminación'
             };
             

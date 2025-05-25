@@ -147,8 +147,7 @@ function renderTimeSeriesChart() {
             .attr("text-anchor", "middle")
             .style("font-size", "16px")
             .style("font-weight", "bold")
-            .style("fill", "#333")
-            .text("Evolución Temporal de DALY por PM2.5 por País (2005-2022)");
+            .style("fill", "#333");
         
         // Tooltip
         const tooltip = d3.select("body")
@@ -210,7 +209,49 @@ function renderTimeSeriesChart() {
             .enter()
             .append("g")
             .attr("class", "legend-item")
-            .attr("transform", (d, i) => `translate(0, ${i * 25})`);
+            .attr("transform", (d, i) => `translate(0, ${i * 25})`)
+            .style("cursor", "pointer") // Añadir cursor pointer para indicar que es clickeable
+            .on("click", function(event, d) {
+                // Obtener el país seleccionado
+                const selectedCountry = d.country;
+                
+                // Seleccionar todas las líneas y puntos
+                const allLines = g.selectAll(".line");
+                const allDots = g.selectAll(".dot");
+                
+                // Comprobar si la línea ya está resaltada
+                const isHighlighted = d3.select(this).classed("highlighted");
+                
+                // Restablecer todas las líneas y puntos
+                allLines.style("opacity", 0.8).style("stroke-width", 2.5);
+                allDots.style("opacity", 1).attr("r", 4);
+                legendItems.classed("highlighted", false);
+                
+                // Si no estaba resaltada, resaltar la línea seleccionada
+                if (!isHighlighted) {
+                    // Atenuar todas las líneas y puntos
+                    allLines.style("opacity", 0.2);
+                    allDots.style("opacity", 0.2);
+                    
+                    // Resaltar la línea y puntos seleccionados
+                    g.selectAll(".line").filter(line => line.country === selectedCountry)
+                        .style("opacity", 1)
+                        .style("stroke-width", 4);
+                    
+                    g.selectAll(".dot").filter(dot => dot.country === selectedCountry)
+                        .style("opacity", 1)
+                        .attr("r", 6);
+                    
+                    // Marcar esta leyenda como resaltada
+                    d3.select(this).classed("highlighted", true);
+                }
+            })
+            .on("mouseover", function() {
+                d3.select(this).style("opacity", 0.8);
+            })
+            .on("mouseout", function() {
+                d3.select(this).style("opacity", 1);
+            });
         
         legendItems.append("line")
             .attr("x1", 0)
