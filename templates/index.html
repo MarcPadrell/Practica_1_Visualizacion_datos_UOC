@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visualización de Calidad del Aire - UOC</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <!-- Cargar D3.js localmente -->
+    <script src="{{ url_for('static', filename='lib/d3.v7.min.js') }}"></script>
+</head>
+<body>
+    <!-- El resto del HTML permanece igual -->
+    
+    <!-- Actualizar las rutas de los scripts -->
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/scatter.js') }}"></script>
+</body>
+</html>
